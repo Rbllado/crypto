@@ -1,0 +1,8 @@
+The webpage contains the menu, three main sections and the footer.
+
+1. Each button of the menu reference to their section.
+2. The first section is the Price index of the main Cryptocurrencies nowdays. The api is                  from Coingecko and it's free. In this section
+   we have two buttons to add or remove items in the section.
+3. The second section has a button to order the first twelve coins in an Alphabetic order.
+4. The third section has one button to show a random item. Each click on the button is changing the item showed.
+5. The footer contains the main webpages visited.

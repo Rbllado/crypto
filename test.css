@@ -1,0 +1,128 @@
+body {
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Style for the menu on web */
+#nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+hr.line{
+  width: 75%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+/* Align the sections */
+#app, #random-1, #orden{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+/*Style for the coins */
+#monedas {
+  display: inline-flex;
+  padding: 20px;
+  margin-top: 10px;
+  /* Poner 31 para que se muestren 2 pero bien */
+  width: 30%;
+  background-color: #F0FBF3;
+  text-align: left;
+  border: 1px solid;
+  border-radius: 5px;
+}
+#moneda {
+  display: inline-flex;
+  padding: 20px;
+  margin-top: 30px;
+  margin-right: 30px;
+  width: 60%;
+  background-color: #F0FBF3;
+  text-align: left;
+  border: 1px solid;
+  border-radius: 20px;
+}
+
+.valor, .link{
+  margin-top: 40px;
+  margin-left: 10px;
+  font-family: italic;
+  font-weight: bold;
+}
+
+
+.valor1{
+  margin-top: 80px;
+  margin-left: 30px;
+  font-family: italic;
+  font-weight: bold;
+}
+
+/* Adjust for the image that we get on the API */
+#imagen {
+  width: 20%;
+  height: 10%;
+  padding: 20px;
+  align-items: justify;
+}
+
+.image-container {
+  display: flex;
+  text-align: center;
+}
+
+#banner-image {
+  width: 100%;
+  margin-top: 38px;
+}
+
+
+#sit {
+  width: 100%;
+}
+
+/* To be responsive in all pages */
+
+@media screen and (max-width:950px) {
+  #monedas{
+    width: 75%;
+  }
+  #moneda{
+    width: 75%;
+    display: inline-block;
+    text-align: center;
+  }
+  .valor, .link{
+    margin-top: 80px;
+    margin-left: 10px;
+  }
+  .valor1{
+    margin-top: 10px;
+  }
+}

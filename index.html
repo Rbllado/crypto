@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="test.css">
+  <title>DTT TEST</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script type="text/javascript" src="js/lodash.js">
+
+  </script>
+  </script>
+</head>
+
+<body>
+
+  <div class="main-container">
+    <!--Menu section -->
+    <nav class="navegador" id="nav">
+      <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="#app">Index</a></li>
+        <li><a href="#orden">Sort List</a></li>
+        <li><a href="#random-1">Random Item</a></li>
+      </ul>
+    </nav>
+    <!-- We have a div for the image -->
+    <div class="image-container">
+      <img id="banner-image" src="https://images.unsplash.com/photo-1550565227-a6144af19c78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="bitcoin" />
+    </div>
+
+    <hr />
+
+    <!-- In this app tag we have the coins ordered like the api valueitem that we can add and delete items.
+    At the beginning shows 12 items,but it can modified on test.js -->
+    <div id="app">
+      <div class="index">
+        <h1>Cryptocurrencies Price Index</h1>
+        <button type="button" v-on:click="number++" name="add">Add Element</button>
+        <button type="button" v-on:click="number--" name="add">Remove Element</button>
+      </div>
+      <div v-for="currency in info" v-if="currency.market_cap_rank <= number" id="monedas">
+        <p class="valor">{{ currency.id }}: {{ currency.current_price }}$</p>
+        <img id="imagen" v-bind:src="currency.image" alt="">
+        <a class="link" href="https://www.coingecko.com/es">Link to WebPage Coingecko</a>
+      </div>
+    </div>
+
+    <hr class="line" />
+
+<!--In this section we can order in an Alphabetic way. It calls to function in test.js to show the list ordered. -->
+    <div id="orden">
+      <h3> First twelve coins ordered in an Alphabetic ways</h3>
+      <button type="button" @click="show = true" name="sort" id="sort">Sort</button>
+      <div class="currency" v-for="list in ord" id="ordenar" v-if="show && list.market_cap_rank <= number">
+        <p class="valor"> {{list.id}}</p>
+      </div>
+    </div>
+
+    <hr class="line" />
+
+<!--For generate the random item in each click -->
+    <div class="random" id="random-1">
+      <h3>Here is to create a random item</h3>
+      <button type="button" name="boton" v-on:click="(number = Math.floor((Math.random() * 100) + 1)) && (show = true)" id="rand">Random Item</button>
+      <div id="aleatorio" v-if="show">
+        <div  id="moneda">
+          <p class="valor1">{{ info[number].id }}: {{ info[number].current_price }}$</p>
+          <img id="imagen" v-bind:src="info[number].image" alt="">
+          <a class="valor1" href="https://www.coingecko.com/es">Link to WebPage </a>
+          <p class="valor1">  The total volume is: {{info[number].total_volume}}$</p>
+        </div>
+      </div>
+    </div>
+
+<!--The sitemap is showing the best webs used for this page.  -->
+    <div class="sitemap" id="sit">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://www.coingecko.com/es">Coingecko</a></li>
+        <li><a href="https://stackoverflow.com/">StackOverflow</a></li>
+        <li><a href="https://vuejs.org/">VueJs</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="js/test.js"></script>
+</body>
+
+</html>
